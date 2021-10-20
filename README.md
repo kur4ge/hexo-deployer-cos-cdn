@@ -32,7 +32,7 @@ Hexo部署插件，支持将静态博客发布到腾讯云、阿里云对象存�
 ## 安装
 
 ``` bash
-npm install hexo-deployer-cos-cdn --save
+npm install @kur4ge/hexo-deployer-cos-cdn --save
 ```
 
 ## 配置
@@ -47,9 +47,13 @@ deploy:
   region: ap-shanghai
   secretId: AKIDIgxxxxxxxxxxxxxxxxxxxx0SepjX
   secretKey: qXPCbxxxxxxxxxxxxxxxxxxxxsJZfdR
+  disallowFile:   # 相对 /public的路径, 支持 * 语法
+    - '*.html'
+    - atom.xml
 ```
 
 如上配置，图片和文件将发布到 腾讯云的 同一个 bucket 中，默认开启CDN加速，CDN加速域名为 `_config.yml` 中配置的 `url`，图片上传后，Markdown 源文件中图片依然是相对路径。
+并且不会上传 `html` 和 `atom.xml` 文件
 
 ### 网站与图片放在不同的bucket中
 
