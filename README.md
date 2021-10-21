@@ -47,7 +47,7 @@ deploy:
   region: ap-shanghai
   secretId: AKIDIgxxxxxxxxxxxxxxxxxxxx0SepjX
   secretKey: qXPCbxxxxxxxxxxxxxxxxxxxxsJZfdR
-  disallowFile:   # 相对 /public的路径, 支持 * 语法
+  disallowFiles:   # 相对 /public的路径, 支持 * 语法
     - '*.html'
     - atom.xml
 ```
